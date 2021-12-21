@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use(cors());
 //permite recibir objetos en formato json
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+//mostrar una pagina por defecto
+console.log(path.join(__dirname, '../public'))
 
 // rutas
 app.get('/', (req, res) => {
