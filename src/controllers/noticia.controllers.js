@@ -2,11 +2,14 @@ const noticiaCtrl = {};
 
 // logica para obtener la lista de noticias
 noticiaCtrl.listarNoticias = (req, res) => {
-        res.send('hola desde el servidor backend')
+        res.send('aqui listo las noticias')
     }
 
 noticiaCtrl.borrarProducto = (req, res) => {
-    res.send('aqui borro los productos')
+    res.send('aqui borro las noticias')
 }
 
+noticiaCtrl.crearNoticia = (req, res) => {
+    res.send('aqui creamos una noticia')
+}
 export default noticiaCtrl
