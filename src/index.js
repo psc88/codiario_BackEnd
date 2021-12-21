@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import router from './routes/noticia.routes';
 
 const app = express();
 
@@ -19,13 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //mostrar una pagina por defecto
-console.log(path.join(__dirname, '../public'))
+app.use(express.static(path.join(__dirname, '../public')))
 
-// rutas
-app.get('/', (req, res) => {
-     res.send('hola desde el servidor backend')  
-})
-app.delete('/borrardatos', (req, res) => {
-     res.send('aqui vamos a borrar')  
-})
+// crear rutas
+app.use('/apicrud', router);
 
