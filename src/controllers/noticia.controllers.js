@@ -3,8 +3,17 @@ import Noticia from "../models/noticia";
 const noticiaCtrl = {};
 
 // logica para obtener la lista de noticias
-noticiaCtrl.listarNoticias = (req, res) => {
-    res.send('aqui listo las noticias')
+noticiaCtrl.listarNoticias = async(req, res) => {
+    try{
+        // crear un arreglo con todos los productos
+        const listaNoticias =  await Noticia.find();
+        res.status(200).json(listaNoticias)
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'No se pudo obtener el listado de noticias'
+        })
+    }
 }
 
 noticiaCtrl.borrarProducto = (req, res) => {
