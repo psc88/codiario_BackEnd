@@ -48,7 +48,11 @@ noticiaCtrl.crearNoticia = async(req, res) => {
 
 noticiaCtrl.obtenerNoticia = async(req,res) => {
     try{
-
+        //obtener el parametro de la ruta
+        // console.log(req.params.id)
+        //creo el objeto y lo busco en la base de datos
+        const noticiaBuscada = await Noticia.findById(req.params.id);
+        res.status(200).json(noticiaBuscada);
     }catch(error){
         console.log(error);
         res.status(404).json({
