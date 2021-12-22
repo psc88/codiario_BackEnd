@@ -10,6 +10,8 @@ noticiaCtrl.borrarProducto = (req, res) => {
 }
 
 noticiaCtrl.crearNoticia = (req, res) => {
+    console.log(req);
+    console.log(req.body);
     res.send('aqui creamos una noticia')
 }
 export default noticiaCtrl

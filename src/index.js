@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import router from './routes/noticia.routes';
+import './database'
 
 const app = express();
 
