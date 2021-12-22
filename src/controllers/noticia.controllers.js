@@ -5,7 +5,7 @@ const noticiaCtrl = {};
 // logica para obtener la lista de noticias
 noticiaCtrl.listarNoticias = async(req, res) => {
     try{
-        // crear un arreglo con todos los productos
+        // crear un arreglo con todos las noticias
         const listaNoticias =  await Noticia.find();
         res.status(200).json(listaNoticias)
     }catch(error){
@@ -16,7 +16,7 @@ noticiaCtrl.listarNoticias = async(req, res) => {
     }
 }
 
-noticiaCtrl.borrarProducto = (req, res) => {
+noticiaCtrl.borrarNoticia = (req, res) => {
     res.send('aqui borro las noticias')
 }
 
@@ -31,18 +31,30 @@ noticiaCtrl.crearNoticia = async(req, res) => {
             descripcion: req.body.descripcion,
             linkImagen: req.body.linkImagen,
         });
-        // guardar producto en DB
+        // guardar Noticia en DB
         await noticiaNueva.save()
         // enviar la respuesta
         res.status(201).json({
-            mensaje: 'Producto agregado correctamente'
+            mensaje: 'Noticia agregado correctamente'
         })
     } catch (error) {
         console.log(error);
         // enviar codigo de error
         res.status(400).json({
-            mensaje: 'Error al agregar un producto'
+            mensaje: 'Error al agregar un Noticia'
         })
     }
 }
+
+noticiaCtrl.obtenerNoticia = async(req,res) => {
+    try{
+
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'No se pudo obtener el listado de noticias'
+        })
+    }
+}
+
 export default noticiaCtrl

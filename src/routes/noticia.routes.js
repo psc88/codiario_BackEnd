@@ -6,8 +6,9 @@ const router = Router();
 //crear rutas
 router
     .route('/')
-    .delete(noticiaCtrl.borrarProducto)
     .post(noticiaCtrl.crearNoticia)
     .get(noticiaCtrl.listarNoticias)
+
+router.route ('/:id').get(noticiaCtrl.obtenerNoticia)
 
 export default router;
