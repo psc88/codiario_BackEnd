@@ -61,4 +61,17 @@ noticiaCtrl.obtenerNoticia = async(req,res) => {
     }
 }
 
+noticiaCtrl.borrarNoticia = async(req,res) => {
+    try{
+         //busque un prodcuto mediante el id, y cuando lo encuentre que lo borre
+         await Noticia.findByIdAndDelete(req.params.id);
+         res.status(200).json({mensaje: 'Noticia eliminada correctamente'});
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'No se pudo borrar la noticias'
+        })
+    }
+}
+
 export default noticiaCtrl

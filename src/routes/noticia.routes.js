@@ -9,6 +9,6 @@ router
     .post(noticiaCtrl.crearNoticia)
     .get(noticiaCtrl.listarNoticias)
 
-router.route ('/:id').get(noticiaCtrl.obtenerNoticia)
+router.route ('/:id').get(noticiaCtrl.obtenerNoticia).delete(noticiaCtrl.borrarNoticia)
 
 export default router;
