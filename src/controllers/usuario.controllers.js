@@ -64,4 +64,16 @@ usuarioCtrl.borrarUsuario = async(req,res) => {
     }
 }
 
+usuarioCtrl.editarUsuario = async(req,res) => {
+    try{
+        await Usuario.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({mensaje: 'Usuario editado correctamente'})
+    }catch(error){
+        console.log(error)
+        res.status(404).json({
+            mensaje: 'No se pudo borrar usuario'
+        })
+    }
+}
+
 export default usuarioCtrl;

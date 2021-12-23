@@ -25,5 +25,6 @@ router
     .route('/usuario/:id')
     .get(usuarioCtrl.obtenerUsuario)
     .delete(usuarioCtrl.borrarUsuario)
+    .put(usuarioCtrl.editarUsuario)
 
 export default router;
