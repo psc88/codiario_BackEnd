@@ -16,10 +16,6 @@ noticiaCtrl.listarNoticias = async(req, res) => {
     }
 }
 
-noticiaCtrl.borrarNoticia = (req, res) => {
-    res.send('aqui borro las noticias')
-}
-
 noticiaCtrl.crearNoticia = async(req, res) => {
     try {
         //validar 
@@ -56,7 +52,7 @@ noticiaCtrl.obtenerNoticia = async(req,res) => {
     }catch(error){
         console.log(error);
         res.status(404).json({
-            mensaje: 'No se pudo obtener el listado de noticias'
+            mensaje: 'No se pudo obtener la noticias solicitada'
         })
     }
 }

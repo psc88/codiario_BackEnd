@@ -40,4 +40,28 @@ usuarioCtrl.crearUsuario = async(req, res) => {
     }
 }
 
+usuarioCtrl.obtenerUsuario = async(req, res) => {
+    try{
+        const usuarioBuscado = await Usuario.findById(req.params.id);
+        res.status(200).json(usuarioBuscado)
+    }catch(error){
+        console.log(error)
+        res.status(404).json({
+            mensaje: 'No se puede obtener el usuario solicitado'
+        })
+    }
+}
+
+usuarioCtrl.borrarUsuario = async(req,res) => {
+    try{
+        await Usuario.findByIdAndDelete(req.params.id);
+        res.status(200).json({mensaje: 'Usuario borrado correctamente'})
+    }catch(error){
+        console.log(error)
+        res.status(404).json({
+            mensaje: 'No se pudo borrar usuario'
+        })
+    }
+}
+
 export default usuarioCtrl;

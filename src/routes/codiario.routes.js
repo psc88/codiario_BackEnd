@@ -21,4 +21,9 @@ router
     .post(usuarioCtrl.crearUsuario)
     .get(usuarioCtrl.listarUsuarios)
 
+router
+    .route('/usuario/:id')
+    .get(usuarioCtrl.obtenerUsuario)
+    .delete(usuarioCtrl.borrarUsuario)
+
 export default router;
