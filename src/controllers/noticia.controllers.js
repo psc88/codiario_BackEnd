@@ -86,4 +86,4 @@ noticiaCtrl.editarNoticia = async(req,res) => {
         })
     }
 }
-export default noticiaCtrl
+export default noticiaCtrl;
