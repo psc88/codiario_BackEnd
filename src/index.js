@@ -24,5 +24,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '../public')))
 
 // crear rutas
-app.use('/apicrud', router);
+app.use('/apicrudNoticias', router);
+app.use('/apicrudUsuarios', router);
 
