@@ -74,4 +74,16 @@ noticiaCtrl.borrarNoticia = async(req,res) => {
     }
 }
 
+noticiaCtrl.editarNoticia = async(req,res) => {
+    try{
+        //buscar el producto con el id y modificar los valores con los datos que me llega del body
+        await Noticia.findByIdAndUpdate(req.params.id,req.body);
+        res.status(200).json({mensaje: 'se modifico el producto solicitado'});
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'No se pudo modificar la notica solicitada'
+        })
+    }
+}
 export default noticiaCtrl
