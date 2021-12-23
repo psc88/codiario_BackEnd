@@ -11,7 +11,7 @@ router
     .get(noticiaCtrl.listarNoticias)
 
 router
-    .route('/noticia:id')
+    .route('/noticia/:id')
     .get(noticiaCtrl.obtenerNoticia)
     .delete(noticiaCtrl.borrarNoticia)
     .put(noticiaCtrl.editarNoticia)

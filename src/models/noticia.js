@@ -4,7 +4,7 @@ const noticiaSchema = new Schema({
     categoria:{
         type: String,
         required:true,
-        maxlength:10,
+        maxlength:15,
     },
     titulo:{
         type: String,

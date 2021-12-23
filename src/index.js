@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
-import router from './routes/noticia.routes';
+import router from './routes/codiario.routes';
 import './database'
 
 const app = express();
