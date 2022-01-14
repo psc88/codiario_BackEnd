@@ -20,6 +20,7 @@ comentarioCtrl.crearComentario = async(req, res) => {
             nombreComentador: req.body.nombre,
             comentario: req.body.comentario
         });
+        console.log(comentarioNueva)
         await comentarioNueva.save()
         res.status(201).json({
             mensaje: 'Comentario agregado correctamente'
