@@ -20,10 +20,11 @@ usuarioCtrl.crearUsuario = async(req, res) => {
 
         //crear un nuevo objeto para guardar en la DB
         const usuarioNuevo = new Usuario({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            nombreYApellido: req.body.nombreYApellido,
+            edad: req.body.edad,
+            ciudad: req.body.ciudad,
             email: req.body.email,
-            pass: req.body.pass,
+            contraseña: req.body.contraseña,
         });
         // guardar Noticia en DB
         await usuarioNuevo.save()
