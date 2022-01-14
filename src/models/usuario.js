@@ -1,15 +1,23 @@
 import mongoose, {Schema} from 'mongoose';
 
 const usuarioSchema = new Schema({
-    nombre:{
+    nombreYApellido:{
         type: String,
         required:true,
         maxlength:30,
+        minlength:5
     },
-    apellido:{
-        type: String,
+    edad:{
+        type: Number,
         required:true,
-        maxlength:30,
+        maxlength:2,
+        minlength:1,
+    },
+    ciudad:{
+        type: String,
+        required: true,
+        maxlength: 10,
+        minlength: 2
     },
     email:{
         type: String,
@@ -17,7 +25,7 @@ const usuarioSchema = new Schema({
         maxlength:50,
         unique: true
     },
-    pass:{
+    contraseña:{
         type: String,
         required:true,
         maxlength:16,

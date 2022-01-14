@@ -1,11 +1,11 @@
 import mongoose, {Schema} from 'mongoose';
 
 const comentarioSchema = new Schema({
-    nombre:{
+    nombreComentador:{
         type: String,
         required:true,
         maxlength:15,
-        minlength:3,
+        minlength:2,
     },
     comentario:{
         type: String,
