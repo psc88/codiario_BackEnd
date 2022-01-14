@@ -18,7 +18,7 @@ comentarioCtrl.crearComentario = async(req, res) => {
     try {
         const comentarioNueva = new Comentario({
             nombreComentador: req.body.nombre,
-            comentario: req.body.comentario,
+            comentario: req.body.comentario
         });
         await comentarioNueva.save()
         res.status(201).json({
