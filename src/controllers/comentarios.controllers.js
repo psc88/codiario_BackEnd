@@ -17,7 +17,7 @@ comentarioCtrl.listarComentario = async(req,res) => {
 comentarioCtrl.crearComentario = async(req, res) => {
     try {
         const comentarioNueva = new Comentario({
-            nombreComentador: req.body.nombre,
+            nombre: req.body.nombre,
             comentario: req.body.comentario
         });
         console.log(comentarioNueva)

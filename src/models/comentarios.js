@@ -1,7 +1,7 @@
 import mongoose, {Schema} from 'mongoose';
 
 const comentarioSchema = new Schema({
-    nombreComentador:{
+    nombre:{
         type: String,
         required:true,
         maxlength:15,
