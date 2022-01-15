@@ -1,6 +1,7 @@
 import Usuario from "../models/usuario";
 
 const usuarioCtrl = {};
+const bcryptJs = require('bcryptjs');
 
 usuarioCtrl.listarUsuarios = async(req, res) => {
     try{
@@ -24,7 +25,7 @@ usuarioCtrl.crearUsuario = async(req, res) => {
             edad: req.body.edad,
             ciudad: req.body.ciudad,
             email: req.body.email,
-            contraseña: req.body.contraseña,
+            contraseña: req.body.contraseña
         });
         // guardar Noticia en DB
         await usuarioNuevo.save()
